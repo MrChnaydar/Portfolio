@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html
+  lang="es ES"
+  class="w-full flex justify-center items-center dark:bg-black dark:text-white scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <script>
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+
+      localStorage.theme = "light";
+
+      localStorage.theme = "dark";
+
+      localStorage.removeItem("theme");
+    </script>
+  </head>
+
+  <body class="w-1/2">
+    <header
+      class="flex flex-col items-center justify-between p-4 z-2 fixed top-0 left-0 right-0 dark:border-gray-600"
+    >
+      <nav
+        class="flex justify-center gap-10 px-8 py-4 border-2 border-black bg-white dark:bg-gray-700 dark:border-gray-600 rounded-md"
+      >
+        <a href="#hero" class="">Inicio</a>
+        <a href="#sobre" class="">Sobre mí</a>
+        <a href="#work" class="">Trabajo</a>
+
+        <a href="#contact" class="">Contacto</a>
+        <button
+          id="darkModeToggle"
+          class="rounded-md cursor-pointer"
+          onclick="document.documentElement.classList.toggle('dark') && localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light')"
+        >
+          &#127769;
+        </button>
+      </nav>
+    </header>
+    <main class="flex flex-col items-center justify-evenly text-center">
+      <section
+        id="hero"
+        class="flex items-center justify-center flex-col h-screen"
+      >
+        <p class="text-xl py-2 font-bold">Based in Spain 🇪🇸</p>
+        <h1 class="text-7xl font-semibold py-2">
+          Efficient
+          <span class="font-extrabold text-sky-600 dark:text-sky-400"
+            >Code & Web Development</span
+          >
+          Synergy
+        </h1>
+        <p class="py-4 text-base font-medium">
+          Hi, I'm Nizar, a 23 years old junior developer with experience in
+          Coding and Web Devolopement
+        </p>
+        <div class="flex gap-4 text-center">
+          <a
+            href="#work"
+            class="border-1 border-gray-700 text-lg px-6 py-2 rounded-md bg-gray-200 dark:bg-gray-600 dark:border-gray-500"
+            >See my Work &#11208;</a
+          >
+          <a
+            href="../public/CV_NIZAR_MOURAK_2025.pdf"
+            download=""
+            class="text-lg mx-6 my-2 border-b-1 border-gray-400 dark:border-gray-600 hover:px-2 hover:py-2 transition-all hover:my-0 hover:mx-4 hover:dark:border-gray-300"
+            ><span
+              class="text-blue-600 dark:text-blue-400 font-extrabold text-xl"
+              >&#8595;</span
+            >
+            Download CV</a
+          >
+        </div>
+      </section>
+      <section
+        id="sobre"
+        class="h-screen flex items-center justify-center flex-col"
+      >
+        <h2 class="text-5xl font-semibold text-start">Current Technologies</h2>
+        <p class="py-5 text-base font-medium text-start">
+          I'm proficient in a range of modern technologies. These are some of my
+          main technologies.
+        </p>
+        <div class="grid grid-cols-3 gap-5">
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/HTML5.png"
+              alt="HTML Logo"
+              class="w-15 h-15 bg-orange-500/60 dark:bg-orange-400 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">HTML</h5>
+              <h6 class="text-base font-normal text-start">
+                HyperText Markup Language
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/tailwind.png"
+              alt="Tailwind Logo"
+              class="w-15 h-15 bg-teal-600/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Tailwind</h5>
+              <h6 class="text-base font-normal text-start">CSS Framework</h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/angular.png"
+              alt="Angular Logo"
+              class="w-15 h-15 bg-red-500/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Angular</h5>
+              <h6 class="text-base font-normal text-start">
+                Web Application Framework
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/typescript.png"
+              alt="TypeScript Logo"
+              class="w-15 h-15 bg-blue-500/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Typescript</h5>
+              <h6 class="text-base font-normal text-start">
+                JavaScript Superset
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/python.png"
+              alt="Python Logo"
+              class="w-15 h-15 bg-yellow-500/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Python</h5>
+              <h6 class="text-base font-normal text-start">
+                Programming Language
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/git.png"
+              alt="Git Logo"
+              class="w-15 h-15 bg-amber-600/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Git</h5>
+              <h6 class="text-base font-normal text-start">
+                Version Control System
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/nodejs.png"
+              alt="Node.js Logo"
+              class="w-15 h-15 bg-green-700/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">Node.js</h5>
+              <h6 class="text-base font-normal text-start">
+                JavaScript Runtime
+              </h6>
+            </div>
+          </div>
+          <div
+            class="flex flex-row bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            <img
+              src="../img/react.png"
+              alt="React Logo"
+              class="w-15 h-15 bg-blue-600/60 p-2 rounded-md mr-2"
+            />
+            <div class="flex flex-col">
+              <h5 class="text-xl font-medium text-start">React</h5>
+              <h6 class="text-base font-normal text-start">
+                JavaScript Library
+              </h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="work"
+        class="h-screen flex items-center justify-center flex-col"
+      >
+        <h2 class="text-5xl font-semibold text-start">My Work</h2>
+        <p class="py-5 text-base font-medium text-start">
+          Aquí hay algunos proyectos en los que he trabajado recientemente.
+        </p>
+        <div class="grid grid-cols-2">
+          <div
+            class="flex flex-col bg-gray-500/50 dark:bg-gray-700 p-2 rounded-md"
+          >
+            here is img
+            <div class="flex flex-row justify-baseline items-baseline-last">
+              <div class="flex-col">
+                <h3 class="text-start text-2xl font-bold py-2">Weather App</h3>
+                <div class="flex flex-wrap gap-2">
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    Angular
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    Typescript
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    Tailwind CSS
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    Html
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    Firebase
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-gray-300/50 dark:bg-gray-600 rounded-md"
+                  >
+                    REST API
+                  </p>
+                </div>
+              </div>
+              <a
+                class="bg-gray-300/50 dark:bg-gray-600 rounded-md px-4 pt-2 pb-4 text-5xl text-center cursor-pointer"
+                href="https://weather-app-lac-eta-84.vercel.app"
+                target="_blank"
+              >
+                &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <!-- <footer>
+    <div class="p-4 text-center">
+      <p>&copy; 2023 Mi Portafolio. Todos los derechos reservados.</p>
+      <p>
+        Hecho con <span class="text-red-500">&hearts;</span> por
+        <a href="" class="hover:text-gray-400">Nizar</a>
+      </p>
+    </div>
+  </footer> -->
+</html>
