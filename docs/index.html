@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html
+  lang="es ES"
+  class="w-full relative flex justify-center items-center bg-zinc-100 text-black dark:bg-zinc-950 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:text-white scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <script>
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+
+      localStorage.theme = "light";
+
+      localStorage.theme = "dark";
+
+      localStorage.removeItem("theme");
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+        updateIcons();
+      }
+      function updateIcons() {
+        const isDark = document.documentElement.classList.contains("dark");
+        document
+          .getElementById("icon-moon")
+          .classList.toggle("opacity-0", isDark);
+        document
+          .getElementById("icon-sun")
+          .classList.toggle("opacity-0", !isDark);
+      }
+
+      document.querySelector("video").playbackRate = 3.0;
+      document.querySelector("video").play();
+      document.addEventListener("DOMContentLoaded", updateIcons);
+    </script>
+  </head>
+
+  <body class="relative w-1/2">
+    <header
+      class="flex flex-col items-center justify-between p-10 z-2 fixed top-0 left-0 right-0"
+    >
+      <nav
+        class="flex justify-center gap-10 px-8 py-4 border-2 font-medium border-zinc-300/80 bg-zinc-200 dark:bg-zinc-900 dark:border-zinc-700/80 rounded-md"
+      >
+        <a href="#hero" class="hover:underline">Inicio</a>
+        <a href="#sobre" class="hover:underline">Sobre mí</a>
+        <a href="#trabajo" class="hover:underline">Trabajo</a>
+
+        <a href="#contacto" class="hover:underline">Contacto</a>
+        <button
+          id="darkModeToggle"
+          class="relative rounded-md cursor-pointer"
+          onclick="toggleTheme()"
+        >
+          <span
+            id="icon-moon"
+            class="absolute transition-opacity duration-300 dark:opacity-0 top-0 left-0 right-0 bottom-0 flex items-center justify-center text-lg"
+            >&#127769;</span
+          >
+          <span
+            id="icon-sun"
+            class="absolute transition-opacity duration-300 opacity-0 dark:opacity-100 top-0 left-0 right-0 bottom-0 flex items-center justify-center text-lg"
+            >&#9728;</span
+          >
+        </button>
+      </nav>
+    </header>
+    <main
+      class="flex flex-col items-center justify-center text-center z-2 mt-[-60px]"
+    >
+      <section
+        id="hero"
+        class="flex items-center justify-center flex-col w-full h-dvh"
+      >
+        <p class="text-xl font-semibold dark:text-white/80 text-black/80">
+          Basado en España 🇪🇸
+        </p>
+        <h1 class="text-7xl font-semibold py-2 leading-20">
+          Soluciones en
+          <span class="font-bold text-sky-600 dark:text-sky-400"
+            >Código y Desarrollo Web</span
+          >
+          Eficiente
+        </h1>
+        <p class="py-4 text-base font-medium dark:text-white/80 text-black/80">
+          ¡Hola, soy Nizar, un desarrollador junior de 23 años con experiencia
+          en programación y desarrollo web!
+        </p>
+        <div class="flex gap-6 text-center mt-5">
+          <div
+            class="relative group flex flex-col items-center justify-center overflow-hidden"
+          >
+            <div
+              class="absolute w-5 h-[100px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 -left-20 -rotate-45 blur-sm animate-shimmer duration-1000 pointer-events-none"
+            ></div>
+            <a
+              href="#trabajo"
+              class="border-1 border-gray-700 text-lg px-6 py-2 rounded-md bg-zinc-300 dark:bg-zinc-800/90 dark:border-gray-500 pointer-events-auto dark:hover:bg-zinc-600/90 hover:bg-gray-300/50 transition-all"
+              >Ver mi trabajo &#11208;</a
+            >
+          </div>
+          <a
+            href="./public/CV_NIZAR_MOURAK_2025.pdf"
+            download=""
+            class="text-lg mx-6 my-2 border-b-1 border-gray-400 dark:border-zinc-800/90 hover:px-2 hover:py-2 transition-all hover:my-0 hover:mx-4 hover:dark:border-gray-300 pointer-events-auto"
+            ><span
+              class="text-blue-600 dark:text-blue-400 font-extrabold text-xl"
+              >&#8595;</span
+            >
+            Descargar CV</a
+          >
+        </div>
+      </section>
+      <section id="sobre" class="flex justify-center flex-col w-full h-dvh">
+        <h2 class="text-5xl font-semibold text-start">Tecnologías Actuales</h2>
+        <p
+          class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80"
+        >
+          Soy competente en distintas tecnologías modernas. Estas son algunas de
+          mis principales tecnologías.
+        </p>
+        <div class="grid grid-cols-3 gap-5 pointer-events-auto">
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/HTML5.png"
+              alt="HTML Logo"
+              class="w-15 h-15 bg-orange-500/60 dark:bg-orange-400 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 w-full transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">HTML</h5>
+                <h6 class="text-base font-normal text-start">
+                  HyperText Markup Language
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-orange-500/60 dark:bg-orange-400 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Avanzado
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  100% confianza
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/tailwind.png"
+              alt="Tailwind Logo"
+              class="w-15 h-15 bg-teal-600/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">Tailwind</h5>
+                <h6 class="text-base font-normal text-start">CSS Framework</h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-teal-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Avanzado
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  Familiarizado con clases utilitarias
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/angular.png"
+              alt="Angular Logo"
+              class="w-15 h-15 bg-red-500/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">Angular</h5>
+                <h6 class="text-base font-normal text-start">
+                  Web Application Framework
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-red-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Intermedio
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  Usado en mi proyecto Weather App
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/typescript.png"
+              alt="TypeScript Logo"
+              class="w-15 h-15 bg-blue-500/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">TypeScript</h5>
+                <h6 class="text-base font-normal text-start">
+                  JavaScript Superset
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-blue-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Intermedio
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  Usado mas que JavaScript
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/python.png"
+              alt="Python Logo"
+              class="w-15 h-15 bg-yellow-500/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">Python</h5>
+                <h6 class="text-base font-normal text-start">
+                  Programming Language
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99.5%] bg-yellow-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Avanzado
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  Automatización y scripts
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/git.png"
+              alt="Git Logo"
+              class="w-15 h-15 bg-amber-600/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">Git</h5>
+                <h6 class="text-base font-normal text-start">
+                  Version Control System
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-amber-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Intermedio
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  Trabajo en equipo y ramas
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/nodejs.png"
+              alt="Node.js Logo"
+              class="w-15 h-15 bg-green-700/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">Node.js</h5>
+                <h6 class="text-base font-normal text-start">
+                  JavaScript Runtime
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-green-700/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Intermedio
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  APIs REST
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+          >
+            <img
+              src="./img/react.png"
+              alt="React Logo"
+              class="w-15 h-15 bg-blue-600/60 p-2 rounded-l-md"
+            />
+            <div class="flex flex-col relative overflow-hidden w-full">
+              <div
+                class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
+              >
+                <h5 class="text-xl font-medium text-start">React</h5>
+                <h6 class="text-base font-normal text-start">
+                  JavaScript Library
+                </h6>
+              </div>
+              <div
+                class="absolute left-[-99%] bg-blue-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+              >
+                <h5 class="text-lg font-medium text-start text-white">
+                  Nivel: Intermedio
+                </h5>
+                <h6 class="text-sm font-normal text-start text-white">
+                  UI dinámica
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="trabajo" class="flex justify-center flex-col w-full h-dvh">
+        <h2 class="text-5xl font-semibold text-start">Mi Trabajo</h2>
+        <p
+          class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80"
+        >
+          Aquí hay algunos proyectos en los que he trabajado recientemente.
+        </p>
+        <div class="grid grid-cols-1">
+          <div
+            class="flex flex-col bg-zinc-300 dark:bg-zinc-800/60 p-3 rounded-md"
+          >
+            <video
+              src="./vids/Demo-weather.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+              class="rounded-md w-full h-full max-h-240 object-cover"
+            ></video>
+            <div class="flex flex-row justify-between items-baseline-last">
+              <div class="flex-col">
+                <h3 class="text-start text-2xl font-bold py-2">Weather App</h3>
+                <div class="flex flex-wrap gap-2 pointer-events-auto">
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    Angular
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    Typescript
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    Tailwind CSS
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    HTML
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    Firebase
+                  </p>
+                  <p
+                    class="px-2 py-1 bg-zinc-200 dark:bg-zinc-800/90 rounded-md hover:bg-gray-100/50 cursor-default transition-all"
+                  >
+                    REST API
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 text-center pointer-events-auto">
+                <a
+                  class="bg-gray-200 dark:bg-zinc-800/90 rounded-md px-4 py-2 pb-3 font-bold text-2xl text-center cursor-pointer text-blue-500 hover:bg-gray-100/50 transition-all"
+                  href="https://github.com/MrChnaydar/Weather-App"
+                  target="_blank"
+                  title="Ver código fuente en GitHub"
+                >
+                  &lt;&gt;
+                </a>
+                <a
+                  class="bg-gray-200 dark:bg-zinc-800/90 rounded-md px-5 text-4xl text-center cursor-pointer text-blue-500 hover:bg-gray-100/50 transition-all"
+                  href="https://weather-app-lac-eta-84.vercel.app"
+                  target="_blank"
+                  title="Ver proyecto en vivo"
+                >
+                  &#8599;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contacto" class="flex justify-center flex-col w-full h-dvh">
+        <h2 class="text-5xl font-semibold text-start">Contacto</h2>
+        <p
+          class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80 border-b-1 dark:border-white/20 border-black/20"
+        >
+          Si deseas ponerte en contacto conmigo, puedes enviarme un mensaje a
+          través del siguiente formulario.
+        </p>
+        <form
+          action="https://formsubmit.co/mourak.nizar@gmail.com"
+          method="POST"
+          class="flex flex-col items-center justify-center gap-5 w-full pointer-events-auto bg-zinc-200 dark:bg-zinc-900 rounded-b-md p-5"
+          enctype="multipart/form-data"
+        >
+          <div class="flex flex-col justify-between items-center gap-2">
+            <label for="name" class="text-xl font-semibold text-start"
+              >Nombre:</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="border-1 dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              required
+              placeholder="Escribe tu nombre aquí..."
+            />
+          </div>
+          <div class="flex flex-col justify-between items-center gap-2">
+            <label for="email" class="text-xl font-semibold">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="border-1 dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              required
+              placeholder="Escribe tu email aquí..."
+            />
+          </div>
+          <div class="flex flex-col justify-between items-center w-1/2 gap-2">
+            <label for="message" class="text-xl font-semibold">Mensaje:</label>
+
+            <textarea
+              id="message"
+              name="message"
+              class="border-1 dark:border-white/20 border-black/20 resize-none p-2 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              maxlength="200"
+              rows="10"
+              cols="60"
+              required
+              placeholder="Escribe tu mensaje aquí..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="cursor-pointer border-1 text-center dark:border-white/20 border-black/20 px-5 py-2 text-2xl font-semibold rounded-md hover:bg-slate-500/50 active:bg-slate-200/50 transition-all"
+          >
+            Enviar
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer
+      class="bottom-0 flex justify-between w-full border-1 dark:border-white/20 border-black/20 mb-10 p-10 dark:bg-zinc-950 bg-zinc-200"
+    >
+      <div>
+        <p class="text-2xl font-semibold">Nizar Mourak</p>
+        <p class="dark:text-white/50 text-black/50 my-2">
+          © 2025 | Todos los derechos reservados
+        </p>
+      </div>
+      <div class="flex flex-row gap-8">
+        <div class="flex flex-col items-start space-y-2">
+          <h5 class="text-2xl font-semibold">Navegar</h5>
+          <a
+            href="#hero"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >Inicio</a
+          >
+          <a
+            href="#sobre"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >Sobre mí</a
+          >
+          <a
+            href="#trabajo"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >Trabajo</a
+          >
+          <a
+            href="#contacto"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >Contacto</a
+          >
+        </div>
+        <div class="flex flex-col items-start space-y-2">
+          <h5 class="text-2xl font-semibold">Proyectos</h5>
+          <a
+            href="https://github.com/MrChnaydar/Weather-App"
+            target="_blank"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+          >
+            Weather App
+          </a>
+        </div>
+        <div class="flex flex-col items-start space-y-2">
+          <h5 class="text-2xl font-semibold">Redes Sociales</h5>
+          <a
+            href="https://www.linkedin.com/in/nizar-mourak"
+            target="_blank"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/MrChnaydar"
+            target="_blank"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >GitHub</a
+          >
+          <a
+            href="mailto:mourak.nizar@gmail.com"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+            >Email</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

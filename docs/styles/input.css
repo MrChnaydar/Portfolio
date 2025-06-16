@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+/* shimmer effect for buttons */
+@keyframes shimmer {
+  0% {
+    left: -40%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
