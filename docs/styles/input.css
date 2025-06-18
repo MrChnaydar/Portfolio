@@ -15,3 +15,7 @@
 .animate-shimmer {
   animation: shimmer 2.5s infinite;
 }
+
+.snap-enabled {
+  @apply snap-y snap-mandatory;
+}

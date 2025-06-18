@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   lang="es ES"
-  class="w-full relative flex justify-center items-center bg-zinc-100 text-black dark:bg-zinc-950 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:text-white scroll-smooth snap-y snap-mandatory transition-all duration-700 ease-in-out"
+  class="w-full relative flex justify-center items-center bg-zinc-100 text-black dark:bg-zinc-950 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:text-white scroll-smooth transition-all duration-700 ease-in-out"
 >
   <head>
     <meta charset="UTF-8" />
@@ -40,6 +40,16 @@
           .classList.toggle("opacity-0", !isDark);
       }
 
+      function toggleSnap() {
+        document.documentElement.classList.toggle("snap-enabled");
+        alert(
+          "El snap scroll esta " +
+            (document.documentElement.classList.contains("snap-enabled")
+              ? "Activado"
+              : "Desactivado")
+        );
+      }
+
       document.querySelector("video").playbackRate = 3.0;
       document.querySelector("video").play();
       document.addEventListener("DOMContentLoaded", updateIcons);
@@ -73,6 +83,13 @@
             class="absolute transition-opacity duration-300 opacity-0 dark:opacity-100 top-0 left-0 right-0 bottom-0 flex items-center justify-center text-lg"
             >&#9728;</span
           >
+        </button>
+        <button
+          id="darkModeToggle"
+          class="relative rounded-md cursor-pointer"
+          onclick="toggleSnap()"
+        >
+          efren aqui -> : &#8597;
         </button>
       </nav>
     </header>
