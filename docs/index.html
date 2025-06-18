@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html
   lang="es ES"
-  class="w-full relative flex justify-center items-center bg-zinc-100 text-black dark:bg-zinc-950 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:text-white scroll-smooth"
+  class="w-full relative flex justify-center items-center bg-zinc-100 text-black dark:bg-zinc-950 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:text-white scroll-smooth snap-y snap-mandatory transition-all duration-700 ease-in-out"
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="./styles/output.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script>
       document.documentElement.classList.toggle(
         "dark",
@@ -78,15 +79,16 @@
     <main class="flex flex-col items-center justify-center text-center z-2">
       <section
         id="hero"
-        class="flex items-center justify-center flex-col w-full h-dvh"
+        class="flex items-center justify-center flex-col w-full h-screen snap-start opacity-0"
+        data-aos="fade-up"
       >
         <p class="text-xl font-semibold dark:text-white/80 text-black/80">
-          Basado en España 🇪🇸
+          Localizado en España 🇪🇸
         </p>
-        <h1 class="text-7xl font-semibold py-2 leading-20">
+        <h1 class="text-7xl font-semibold py-1 leading-20">
           Soluciones en
           <span class="font-bold text-sky-600 dark:text-sky-400"
-            >Código y Desarrollo Web</span
+            >programación y Desarrollo Web</span
           >
           Eficiente
         </h1>
@@ -99,11 +101,11 @@
             class="relative group flex flex-col items-center justify-center overflow-hidden"
           >
             <div
-              class="absolute w-5 h-[100px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 -left-20 -rotate-45 blur-sm animate-shimmer duration-1000 pointer-events-none"
+              class="absolute w-4 h-[100px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 -left-20 -rotate-45 blur-sm animate-shimmer duration-1000 pointer-events-none"
             ></div>
             <a
               href="#trabajo"
-              class="border-1 border-gray-700 text-lg px-6 py-2 rounded-md bg-zinc-300 dark:bg-zinc-800/90 dark:border-gray-500 pointer-events-auto dark:hover:bg-zinc-600/90 hover:bg-gray-300/50 transition-all"
+              class="border-1 border-gray-700 text-lg px-6 py-2 rounded-md bg-zinc-500/80 dark:bg-zinc-800/90 dark:border-gray-500 pointer-events-auto dark:hover:bg-zinc-600/90 hover:bg-gray-300/50 transition-all"
               >Ver mi trabajo &#11208;</a
             >
           </div>
@@ -119,7 +121,11 @@
           >
         </div>
       </section>
-      <section id="sobre" class="flex justify-center flex-col w-full h-dvh">
+      <section
+        id="sobre"
+        class="flex justify-center flex-col w-full h-screen snap-start opacity-0"
+        data-aos="fade-up"
+      >
         <h2 class="text-5xl font-semibold text-start">Tecnologías Actuales</h2>
         <p
           class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80"
@@ -127,9 +133,11 @@
           Soy competente en distintas tecnologías modernas. Estas son algunas de
           mis principales tecnologías.
         </p>
-        <div class="grid grid-cols-3 gap-5 pointer-events-auto">
+        <div
+          class="grid [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] gap-5 pointer-events-auto"
+        >
           <div
-            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 overflow-hidden cursor-default transition-all group"
+            class="flex relative flex-row bg-zinc-300 dark:bg-zinc-800/60 p-3 pr-0 rounded-md hover:border-white/70 cursor-default transition-all group"
           >
             <img
               src="./img/HTML5.png"
@@ -138,20 +146,26 @@
             />
             <div class="flex flex-col relative overflow-hidden w-full">
               <div
-                class="flex flex-col justify-center h-full ml-3 w-full transition-all group-hover:translate-x-[100%] duration-500"
+                class="flex flex-col justify-center ml-3 w-full transition-all group-hover:translate-x-[100%] duration-500 flex-nowrap"
               >
-                <h5 class="text-xl font-medium text-start">HTML</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  HTML
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   HyperText Markup Language
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-orange-500/60 dark:bg-orange-400 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-orange-500/60 dark:bg-orange-400 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Avanzado
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   100% confianza
                 </h6>
               </div>
@@ -170,16 +184,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">Tailwind</h5>
-                <h6 class="text-base font-normal text-start">CSS Framework</h6>
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  Tailwind
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
+                  CSS Framework
+                </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-teal-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-teal-600/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Avanzado
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   Familiarizado con clases utilitarias
                 </h6>
               </div>
@@ -198,18 +220,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">Angular</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  Angular
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   Web Application Framework
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-red-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-red-500/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Intermedio
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   Usado en mi proyecto Weather App
                 </h6>
               </div>
@@ -228,18 +256,24 @@
               <div
                 class="flex flex-col h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">TypeScript</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  TypeScript
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   JavaScript Superset
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-blue-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-blue-500/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Intermedio
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   Usado mas que JavaScript
                 </h6>
               </div>
@@ -258,18 +292,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">Python</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  Python
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   Programming Language
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-yellow-500/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-yellow-500/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Avanzado
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   Automatización y scripts
                 </h6>
               </div>
@@ -288,18 +328,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">Git</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  Git
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   Version Control System
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-amber-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-amber-600/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Intermedio
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   Trabajo en equipo y ramas
                 </h6>
               </div>
@@ -318,18 +364,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">Node.js</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  Node.js
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   JavaScript Runtime
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-green-700/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-green-700/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Intermedio
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   APIs REST
                 </h6>
               </div>
@@ -348,18 +400,24 @@
               <div
                 class="flex flex-col justify-center h-full ml-3 transition-all group-hover:translate-x-[100%] duration-500"
               >
-                <h5 class="text-xl font-medium text-start">React</h5>
-                <h6 class="text-base font-normal text-start">
+                <h5 class="text-xl font-medium text-start whitespace-nowrap">
+                  React
+                </h5>
+                <h6 class="text-base font-normal text-start whitespace-nowrap">
                   JavaScript Library
                 </h6>
               </div>
               <div
-                class="absolute left-[-100%] bg-blue-600/60 flex flex-col justify-center group-hover:left-[0%] h-full w-full group-hover:rounded-r-md transition-all duration-500"
+                class="absolute left-[-100%] bg-blue-600/60 flex flex-col justify-center group-hover:left-[0%] h-15 w-full group-hover:rounded-r-md transition-all duration-500"
               >
-                <h5 class="text-lg font-medium text-start text-white">
+                <h5
+                  class="text-lg font-medium text-start text-white whitespace-nowrap"
+                >
                   Nivel: Intermedio
                 </h5>
-                <h6 class="text-sm font-normal text-start text-white">
+                <h6
+                  class="text-sm font-normal text-start text-white whitespace-nowrap"
+                >
                   UI dinámica
                 </h6>
               </div>
@@ -367,7 +425,11 @@
           </div>
         </div>
       </section>
-      <section id="trabajo" class="flex justify-center flex-col w-full h-dvh">
+      <section
+        id="trabajo"
+        class="flex justify-center flex-col w-full h-screen snap-start opacity-0"
+        data-aos="fade-up"
+      >
         <h2 class="text-5xl font-semibold text-start">Mi Trabajo</h2>
         <p
           class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80"
@@ -445,10 +507,14 @@
           </div>
         </div>
       </section>
-      <section id="contacto" class="flex justify-center flex-col w-full h-dvh">
+      <section
+        id="contacto"
+        class="flex justify-center flex-col w-full h-screen snap-start opacity-0"
+        data-aos="fade-up"
+      >
         <h2 class="text-5xl font-semibold text-start">Contacto</h2>
         <p
-          class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80 border-b-1 dark:border-white/20 border-black/20"
+          class="py-5 text-base font-medium text-start dark:text-white/80 text-black/80"
         >
           Si deseas ponerte en contacto conmigo, puedes enviarme un mensaje a
           través del siguiente formulario.
@@ -456,29 +522,29 @@
         <form
           action="https://formspree.io/f/xanjbyln"
           method="POST"
-          class="flex flex-col items-center justify-center gap-5 w-full pointer-events-auto bg-zinc-200 dark:bg-zinc-900 rounded-b-md p-5"
+          class="flex flex-col items-center justify-center gap-5 w-fit pointer-events-auto self-center"
           enctype="multipart/form-data"
         >
-          <div class="flex flex-col justify-between items-center gap-2">
-            <label for="name" class="text-xl font-semibold text-start"
+          <div class="flex flex-row justify-between items-center gap-2 w-full">
+            <!-- <label for="name" class="text-xl font-semibold text-start"
               >Nombre:</label
-            >
+            > -->
             <input
               type="text"
               id="name"
               name="name"
-              class="border-1 dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              class="border-1 w-full dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100 drop-shadow-sm dark:drop-shadow-zinc-100 drop-shadow-zinc-900"
               required
               placeholder="Escribe tu nombre aquí..."
             />
           </div>
-          <div class="flex flex-col justify-between items-center gap-2">
-            <label for="email" class="text-xl font-semibold">Email:</label>
+          <div class="flex flex-row justify-between items-center gap-2 w-full">
+            <!-- <label for="email" class="text-xl font-semibold">Email:</label> -->
             <input
               type="email"
               id="email"
               name="email"
-              class="border-1 dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              class="border-1 dark:border-white/20 border-black/20 px-3 py-1 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100 drop-shadow-sm dark:drop-shadow-zinc-100 drop-shadow-zinc-900 w-full"
               placeholder="Escribe tu email aquí..."
               required
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -486,12 +552,12 @@
             />
           </div>
           <div class="flex flex-col justify-between items-center w-1/2 gap-2">
-            <label for="message" class="text-xl font-semibold">Mensaje:</label>
+            <!-- <label for="message" class="text-xl font-semibold">Mensaje:</label> -->
 
             <textarea
               id="message"
               name="message"
-              class="border-1 dark:border-white/20 border-black/20 resize-none p-2 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100"
+              class="border-1 dark:border-white/20 border-black/20 resize-none p-2 text-lg rounded-md dark:bg-zinc-950 bg-zinc-100 drop-shadow-sm dark:drop-shadow-zinc-100 drop-shadow-zinc-900"
               maxlength="200"
               rows="10"
               cols="60"
@@ -501,7 +567,7 @@
           </div>
           <button
             type="submit"
-            class="cursor-pointer border-1 text-center dark:border-white/20 border-black/20 px-5 py-2 text-2xl font-semibold rounded-md hover:bg-slate-500/50 active:bg-slate-200/50 transition-all"
+            class="cursor-pointer border-1 text-center align-middle dark:border-white/20 border-black/20 bg-zinc-200 dark:bg-zinc-900 px-5 py-2 text-2xl font-semibold rounded-md hover:bg-slate-500/50 active:bg-slate-200/50 transition-all drop-shadow-xs dark:drop-shadow-zinc-100 drop-shadow-zinc-950"
             id="form-message"
           >
             Enviar
@@ -510,7 +576,7 @@
       </section>
     </main>
     <footer
-      class="bottom-0 flex justify-between w-full border-1 dark:border-white/20 border-black/20 mb-10 p-10 dark:bg-zinc-950 bg-zinc-200"
+      class="bottom-0 snap-start flex justify-between w-full border-1 dark:border-white/20 border-black/20 mb-10 p-10 dark:bg-zinc-950 bg-zinc-200"
     >
       <div>
         <p class="text-2xl font-semibold">Nizar Mourak</p>
@@ -543,17 +609,7 @@
           >
         </div>
         <div class="flex flex-col items-start space-y-2">
-          <h5 class="text-2xl font-semibold">Proyectos</h5>
-          <a
-            href="https://github.com/MrChnaydar/Weather-App"
-            target="_blank"
-            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
-          >
-            Weather App
-          </a>
-        </div>
-        <div class="flex flex-col items-start space-y-2">
-          <h5 class="text-2xl font-semibold">Redes Sociales</h5>
+          <h5 class="text-2xl font-semibold">RRSS</h5>
           <a
             href="https://www.linkedin.com/in/nizar-mourak"
             target="_blank"
@@ -572,7 +628,24 @@
             >Email</a
           >
         </div>
+        <div class="flex flex-col items-start space-y-2">
+          <h5 class="text-2xl font-semibold">Proyectos</h5>
+          <a
+            href="https://github.com/MrChnaydar/Weather-App"
+            target="_blank"
+            class="dark:text-white/50 dark:hover:text-white text-black/50 hover:text-black text-lg"
+          >
+            Weather App
+          </a>
+        </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+      });
+    </script>
   </body>
 </html>
